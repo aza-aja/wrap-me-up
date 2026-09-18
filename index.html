@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrap Me Up - Packaging & Jasa Packing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">WRAP ME UP</div>
+
+            <div class="nav-menu">
+                <a href="#beranda">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#jasa">Jasa Packing</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#pesan">Pesan</a>
+            </div>
+
+            <button class="cart-button" onclick="document.getElementById('keranjang').scrollIntoView()">
+                🛒 Keranjang
+                <span id="jumlahKeranjang">0</span>
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+        <div class="hero-text">
+            <p class="hero-label">SOLUSI PACKAGING UNTUK BISNISMU</p>
+
+            <h1>
+                Packing lebih rapi,
+                <span>bisnis lebih siap.</span>
+            </h1>
+
+            <p>
+                Wrap Me Up menyediakan kebutuhan packaging dan jasa packing
+                untuk membantu produkmu dikemas dengan lebih rapi dan aman.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#produk" class="btn-primary">Lihat Produk</a>
+                <a href="#jasa" class="btn-secondary">Jasa Packing</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-card-content">
+                <span>WMU</span>
+                <h2>Wrap<br>Me Up</h2>
+                <p>Packaging & Packing Service</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KEUNGGULAN -->
+    <section class="advantages">
+        <div class="advantage">
+            <div class="icon">📦</div>
+            <div>
+                <h3>Praktis</h3>
+                <p>Pesan kebutuhan packaging dengan mudah.</p>
+            </div>
+        </div>
+
+        <div class="advantage">
+            <div class="icon">🛡️</div>
+            <div>
+                <h3>Aman</h3>
+                <p>Membantu menjaga barang selama pengiriman.</p>
+            </div>
+        </div>
+
+        <div class="advantage">
+            <div class="icon">💰</div>
+            <div>
+                <h3>Terjangkau</h3>
+                <p>Harga disesuaikan dengan kebutuhan pelanggan.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="section" id="produk">
+        <div class="section-title">
+            <p>PRODUK</p>
+            <h2>Kebutuhan Packaging</h2>
+            <span>
+                Pilih kebutuhan packaging yang kamu perlukan.
+                <br>
+                <small>*Produk dan harga masih berupa contoh sementara.</small>
+            </span>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span>FOTO</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Kardus Pengiriman</h3>
+                    <p>Kardus untuk kebutuhan pengiriman barang.</p>
+                    <div class="product-bottom">
+                        <strong>Rp8.000</strong>
+                        <button onclick="tambahProduk('Kardus Pengiriman', 8000)">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span>FOTO</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Bubble Wrap</h3>
+                    <p>Perlindungan tambahan untuk barang saat dikirim.</p>
+                    <div class="product-bottom">
+                        <strong>Rp5.000</strong>
+                        <button onclick="tambahProduk('Bubble Wrap', 5000)">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span>FOTO</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Plastik Packing</h3>
+                    <p>Plastik untuk membungkus berbagai jenis barang.</p>
+                    <div class="product-bottom">
+                        <strong>Rp3.000</strong>
+                        <button onclick="tambahProduk('Plastik Packing', 3000)">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span>FOTO</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>Gift Packaging</h3>
+                    <p>Kemasan untuk hadiah dan kebutuhan khusus.</p>
+                    <div class="product-bottom">
+                        <strong>Rp15.000</strong>
+                        <button onclick="tambahProduk('Gift Packaging', 15000)">
+                            + Tambah
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- JASA PACKING -->
+    <section class="service-section" id="jasa">
+        <div class="service-text">
+            <p>JASA PACKING</p>
+            <h2>Barang kamu, kami yang packing.</h2>
+
+            <p>
+                Tidak punya waktu untuk mengemas barang?
+                Wrap Me Up membantu proses packing agar barang
+                siap untuk dikirim kepada pelanggan.
+            </p>
+
+            <a href="#pesan" class="btn-primary">Pesan Jasa Packing</a>
+        </div>
+
+        <div class="service-list">
+            <div>
+                <span>01</span>
+                <h3>Siapkan Barang</h3>
+                <p>Kamu menyerahkan barang yang akan dikemas.</p>
+            </div>
+
+            <div>
+                <span>02</span>
+                <h3>Proses Packing</h3>
+                <p>Barang dikemas menggunakan material yang sesuai.</p>
+            </div>
+
+            <div>
+                <span>03</span>
+                <h3>Siap Dikirim</h3>
+                <p>Barang sudah dikemas dan siap untuk dikirim.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KERANJANG -->
+    <section class="section cart-section" id="keranjang">
+        <div class="section-title">
+            <p>KERANJANG</p>
+            <h2>Pesanan Kamu</h2>
+        </div>
+
+        <div id="isiKeranjang">
+            <p class="empty-cart">Keranjang masih kosong.</p>
+        </div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="totalHarga">Rp0</strong>
+        </div>
+    </section>
+
+
+    <!-- FORM PEMESANAN -->
+    <section class="order-section" id="pesan">
+        <div class="section-title">
+            <p>PESAN SEKARANG</p>
+            <h2>Lengkapi Data Pemesanan</h2>
+        </div>
+
+        <form id="formPesanan">
+
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama kamu"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="telepon">Nomor WhatsApp</label>
+                <input
+                    type="tel"
+                    id="telepon"
+                    placeholder="Contoh: 081234567890"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <textarea
+                    id="alamat"
+                    placeholder="Masukkan alamat pengiriman"
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="catatan">Catatan</label>
+                <textarea
+                    id="catatan"
+                    placeholder="Catatan tambahan (opsional)"
+                ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary full-button">
+                Pesan melalui WhatsApp
+            </button>
+
+        </form>
+    </section>
+
+
+    <!-- TENTANG -->
+    <section class="about-section" id="tentang">
+        <div class="about-box">
+            <p>TENTANG KAMI</p>
+
+            <h2>Wrap Me Up</h2>
+
+            <p>
+                Wrap Me Up merupakan usaha jasa packing dan penjualan
+                kebutuhan packaging yang dikembangkan dengan memanfaatkan
+                teknologi digital.
+            </p>
+
+            <p>
+                Melalui website ini, pelanggan dapat melihat produk,
+                memasukkan barang ke keranjang, dan melakukan pemesanan
+                dengan lebih mudah.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h2>WRAP ME UP</h2>
+                <p>
+                    Jasa Packing & Penjualan Packaging
+                    Berbasis Digital.
+                </p>
+            </div>
+
+            <div>
+                <h3>Menu</h3>
+                <a href="#beranda">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#jasa">Jasa Packing</a>
+                <a href="#pesan">Pesan</a>
+            </div>
+
+            <div>
+                <h3>Kontak</h3>
+                <p>WhatsApp: 081991911191</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Wrap Me Up. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

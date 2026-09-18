@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.nav-menu a:hover {
+    color: #777;
+}
+
+.cart-button {
+    border: none;
+    background: #222;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-button span {
+    background: white;
+    color: #222;
+    padding: 2px 7px;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-label {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #777;
+}
+
+.hero-text > p:not(.hero-label) {
+    max-width: 550px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #222;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background: white;
+    color: #222;
+    border: 1px solid #ccc;
+}
+
+.hero-card {
+    min-height: 400px;
+    background: #ddd;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card-content {
+    text-align: center;
+}
+
+.hero-card-content span {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.hero-card-content h2 {
+    font-size: 35px;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+.hero-card-content p {
+    color: #666;
+}
+
+
+/* =========================
+   ADVANTAGES
+========================= */
+
+.advantages {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px 70px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.advantage {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 28px;
+}
+
+.advantage h3 {
+    margin-bottom: 5px;
+}
+
+.advantage p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title p,
+.service-text > p:first-child,
+.about-box > p:first-child {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin: 5px 0 10px;
+}
+
+.section-title span {
+    color: #777;
+}
+
+.section-title small {
+    color: #999;
+}
+
+
+/* =========================
+   PRODUK
+========================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.product-image {
+    height: 220px;
+    background: #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image span {
+    font-weight: bold;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+    min-height: 45px;
+}
+
+.product-bottom {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-bottom strong {
+    font-size: 17px;
+}
+
+.product-bottom button {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   JASA PACKING
+========================= */
+
+.service-section {
+    background: #222;
+    color: white;
+    padding: 80px max(30px, calc((100% - 1140px) / 2));
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.service-text h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 10px 0 20px;
+}
+
+.service-text > p:not(:first-child) {
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-list > div {
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+}
+
+.service-list span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.service-list h3 {
+    margin: 5px 0;
+}
+
+.service-list p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+
+/* =========================
+   KERANJANG
+========================= */
+
+.cart-section {
+    background: #f5f5f5;
+}
+
+#isiKeranjang {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.empty-cart {
+    color: #777;
+}
+
+.cart-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-info h3 {
+    font-size: 16px;
+}
+
+.cart-item-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-controls button {
+    border: 1px solid #ccc;
+    background: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-controls .delete-button {
+    background: #222;
+    color: white;
+}
+
+.cart-total {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-total strong {
+    font-size: 20px;
+}
+
+
+/* =========================
+   FORM PESANAN
+========================= */
+
+.order-section {
+    max-width: 800px;
+    margin: auto;
+    padding: 80px 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.full-button {
+    width: 100%;
+    font-size: 15px;
+}
+
+
+/* =========================
+   TENTANG
+========================= */
+
+.about-section {
+    background: white;
+    padding: 80px 30px;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-box h2 {
+    font-size: 40px;
+    margin: 10px 0 20px;
+}
+
+.about-box p:not(:first-child) {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #222;
+    color: white;
+    padding: 50px 30px 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-content h2 {
+    margin-bottom: 10px;
+}
+
+.footer-content h3 {
+    margin-bottom: 12px;
+}
+
+.footer-content p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.footer-content a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .service-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .cart-button {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-card {
+        min-height: 300px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-section {
+        padding: 60px 20px;
+    }
+
+    .service-text h2 {
+        font-size: 34px;
+    }
+
+    .order-section {
+        padding: 60px 20px;
+    }
+}
