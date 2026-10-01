@@ -10,8 +10,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #222;
+    background: #F5EEDC;
+    color: #173A36;
     line-height: 1.6;
 }
 
@@ -21,8 +21,8 @@ body {
 ========================= */
 
 header {
-    background: white;
-    border-bottom: 1px solid #ddd;
+    background: #14433D;
+    border-bottom: 2px solid #D9B75F;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -43,6 +43,11 @@ header {
     font-size: 22px;
     font-weight: bold;
     letter-spacing: 1px;
+    color: white;
+}
+
+.logo span {
+    color: #D9B75F;
 }
 
 .nav-menu {
@@ -52,26 +57,33 @@ header {
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .nav-menu a:hover {
-    color: #777;
+    color: #D9B75F;
 }
 
 .cart-button {
     border: none;
-    background: #222;
-    color: white;
+    background: #D9B75F;
+    color: #14433D;
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cart-button:hover {
+    background: #E8C875;
 }
 
 .cart-button span {
-    background: white;
-    color: #222;
+    background: #14433D;
+    color: white;
     padding: 2px 7px;
     border-radius: 20px;
     margin-left: 5px;
@@ -94,6 +106,7 @@ header {
 }
 
 .hero-label {
+    color: #1F665E;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -104,16 +117,17 @@ header {
     font-size: 55px;
     line-height: 1.1;
     margin-bottom: 25px;
+    color: #14433D;
 }
 
 .hero h1 span {
     display: block;
-    color: #777;
+    color: #1F665E;
 }
 
 .hero-text > p:not(.hero-label) {
     max-width: 550px;
-    color: #666;
+    color: #4F625E;
     margin-bottom: 30px;
 }
 
@@ -130,23 +144,40 @@ header {
     border-radius: 7px;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-primary {
-    background: #222;
+    background: #14433D;
     color: white;
-    border: none;
+    border: 2px solid #14433D;
+}
+
+.btn-primary:hover {
+    background: #1F665E;
+    border-color: #1F665E;
 }
 
 .btn-secondary {
-    background: white;
-    color: #222;
-    border: 1px solid #ccc;
+    background: #FFFDF5;
+    color: #14433D;
+    border: 2px solid #14433D;
 }
+
+.btn-secondary:hover {
+    background: #14433D;
+    color: white;
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
 
 .hero-card {
     min-height: 400px;
-    background: #ddd;
+    background: #E8DCC0;
+    border: 2px solid #D9B75F;
     border-radius: 15px;
 
     display: flex;
@@ -161,16 +192,18 @@ header {
 .hero-card-content span {
     font-size: 80px;
     font-weight: bold;
+    color: #1F665E;
 }
 
 .hero-card-content h2 {
     font-size: 35px;
     line-height: 1;
     margin: 10px 0;
+    color: #14433D;
 }
 
 .hero-card-content p {
-    color: #666;
+    color: #4F625E;
 }
 
 
@@ -189,12 +222,20 @@ header {
 }
 
 .advantage {
-    background: white;
+    background: #FFFDF5;
     padding: 25px;
     border-radius: 10px;
+    border: 1px solid #D8CBAA;
 
     display: flex;
     gap: 15px;
+
+    transition: 0.3s;
+}
+
+.advantage:hover {
+    transform: translateY(-4px);
+    border-color: #1F665E;
 }
 
 .icon {
@@ -203,10 +244,11 @@ header {
 
 .advantage h3 {
     margin-bottom: 5px;
+    color: #14433D;
 }
 
 .advantage p {
-    color: #777;
+    color: #5F716C;
     font-size: 14px;
 }
 
@@ -228,6 +270,7 @@ header {
 .section-title p,
 .service-text > p:first-child,
 .about-box > p:first-child {
+    color: #1F665E;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -236,14 +279,15 @@ header {
 .section-title h2 {
     font-size: 38px;
     margin: 5px 0 10px;
+    color: #14433D;
 }
 
 .section-title span {
-    color: #777;
+    color: #1F665E;
 }
 
 .section-title small {
-    color: #999;
+    color: #7A8985;
 }
 
 
@@ -258,23 +302,45 @@ header {
 }
 
 .product-card {
-    background: white;
+    background: #FFFDF5;
     border-radius: 12px;
     overflow: hidden;
+    border: 1px solid #D8CBAA;
+
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #1F665E;
+    box-shadow: 0 8px 20px rgba(20, 67, 61, 0.12);
 }
 
 .product-image {
-    height: 220px;
-    background: #ddd;
+    height: 250px;
+    background: white;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
 }
 
 .product-image span {
     font-weight: bold;
-    color: #777;
+    color: #1F665E;
     letter-spacing: 2px;
 }
 
@@ -284,10 +350,11 @@ header {
 
 .product-info h3 {
     margin-bottom: 8px;
+    color: #14433D;
 }
 
 .product-info p {
-    color: #777;
+    color: #5F716C;
     font-size: 14px;
     min-height: 45px;
 }
@@ -302,15 +369,21 @@ header {
 
 .product-bottom strong {
     font-size: 17px;
+    color: #1F665E;
 }
 
 .product-bottom button {
-    background: #222;
+    background: #14433D;
     color: white;
     border: none;
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.product-bottom button:hover {
+    background: #1F665E;
 }
 
 
@@ -319,7 +392,7 @@ header {
 ========================= */
 
 .service-section {
-    background: #222;
+    background: #14433D;
     color: white;
     padding: 80px max(30px, calc((100% - 1140px) / 2));
 
@@ -335,7 +408,7 @@ header {
 }
 
 .service-text > p:not(:first-child) {
-    color: #bbb;
+    color: #D6E0D8;
     margin-bottom: 30px;
 }
 
@@ -346,12 +419,12 @@ header {
 }
 
 .service-list > div {
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #4C7770;
     padding-bottom: 20px;
 }
 
 .service-list span {
-    color: #aaa;
+    color: #D9B75F;
     font-size: 13px;
 }
 
@@ -360,7 +433,7 @@ header {
 }
 
 .service-list p {
-    color: #aaa;
+    color: #D6E0D8;
     font-size: 14px;
 }
 
@@ -370,22 +443,23 @@ header {
 ========================= */
 
 .cart-section {
-    background: #f5f5f5;
+    background: #EDE4CE;
 }
 
 #isiKeranjang {
-    background: white;
+    background: #FFFDF5;
     padding: 25px;
     border-radius: 10px;
+    border: 1px solid #D8CBAA;
 }
 
 .empty-cart {
-    color: #777;
+    color: #6F7F7A;
 }
 
 .cart-item {
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #D8CBAA;
 
     display: flex;
     justify-content: space-between;
@@ -395,10 +469,11 @@ header {
 
 .cart-item-info h3 {
     font-size: 16px;
+    color: #14433D;
 }
 
 .cart-item-info p {
-    color: #777;
+    color: #6F7F7A;
     font-size: 14px;
 }
 
@@ -409,23 +484,34 @@ header {
 }
 
 .cart-controls button {
-    border: 1px solid #ccc;
-    background: white;
+    border: 1px solid #CDBF9B;
+    background: #FFFDF5;
+    color: #14433D;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
 }
 
+.cart-controls button:hover {
+    background: #E8DCC0;
+}
+
 .cart-controls .delete-button {
-    background: #222;
+    background: #14433D;
     color: white;
+    border-color: #14433D;
+}
+
+.cart-controls .delete-button:hover {
+    background: #1F665E;
 }
 
 .cart-total {
     margin-top: 20px;
-    background: white;
+    background: #FFFDF5;
     padding: 20px;
     border-radius: 10px;
+    border: 1px solid #D8CBAA;
 
     display: flex;
     justify-content: space-between;
@@ -433,6 +519,7 @@ header {
 
 .cart-total strong {
     font-size: 20px;
+    color: #14433D;
 }
 
 
@@ -454,16 +541,26 @@ header {
     display: block;
     font-weight: bold;
     margin-bottom: 7px;
+    color: #14433D;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 13px;
-    border: 1px solid #ccc;
+    border: 1px solid #CDBF9B;
     border-radius: 7px;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    background: #FFFDF5;
+    color: #173A36;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1F665E;
+    box-shadow: 0 0 0 2px rgba(31, 102, 94, 0.1);
 }
 
 .form-group textarea {
@@ -482,8 +579,10 @@ header {
 ========================= */
 
 .about-section {
-    background: white;
+    background: #FFFDF5;
     padding: 80px 30px;
+    border-top: 1px solid #D8CBAA;
+    border-bottom: 1px solid #D8CBAA;
 }
 
 .about-box {
@@ -495,10 +594,11 @@ header {
 .about-box h2 {
     font-size: 40px;
     margin: 10px 0 20px;
+    color: #14433D;
 }
 
 .about-box p:not(:first-child) {
-    color: #666;
+    color: #5F716C;
     margin-bottom: 15px;
 }
 
@@ -508,7 +608,7 @@ header {
 ========================= */
 
 footer {
-    background: #222;
+    background: #0E302C;
     color: white;
     padding: 50px 30px 20px;
 }
@@ -524,34 +624,37 @@ footer {
 
 .footer-content h2 {
     margin-bottom: 10px;
+    color: white;
 }
 
 .footer-content h3 {
     margin-bottom: 12px;
+    color: #D9B75F;
 }
 
 .footer-content p {
-    color: #aaa;
+    color: #B8C9C1;
     font-size: 14px;
 }
 
 .footer-content a {
     display: block;
-    color: #aaa;
+    color: #B8C9C1;
     text-decoration: none;
     margin-bottom: 5px;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .footer-content a:hover {
-    color: white;
+    color: #D9B75F;
 }
 
 .footer-bottom {
     max-width: 1200px;
     margin: 40px auto 0;
     padding-top: 20px;
-    border-top: 1px solid #444;
+    border-top: 1px solid #365B55;
     text-align: center;
 }
 
@@ -641,4 +744,16 @@ footer {
     .order-section {
         padding: 60px 20px;
     }
+}
+
+/* Tombol Pesan Jasa Packing */
+.service-text .btn-primary {
+    background: #14433D;
+    color: #FFFFFF;
+    border: 2px solid #D9B75F;
+}
+
+.service-text .btn-primary:hover {
+    background: #D9B75F;
+    color: #173A36;
 }

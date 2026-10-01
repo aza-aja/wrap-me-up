@@ -1,4 +1,5 @@
 let keranjang = [];
+let jenisPesanan = "";
 
 
 // =========================
@@ -7,11 +8,16 @@ let keranjang = [];
 
 function tambahProduk(nama, harga) {
 
+    jenisPesanan = "produk";
+
     let produkAda = keranjang.find(item => item.nama === nama);
 
     if (produkAda) {
+
         produkAda.jumlah++;
+
     } else {
+
         keranjang.push({
             nama: nama,
             harga: harga,
@@ -22,6 +28,20 @@ function tambahProduk(nama, harga) {
     tampilkanKeranjang();
 
     alert(nama + " berhasil ditambahkan ke keranjang.");
+}
+
+
+// =========================
+// PESAN JASA
+// =========================
+
+function pesanJasa() {
+
+    jenisPesanan = "jasa";
+
+    document.getElementById("formPesanan").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 
@@ -46,13 +66,12 @@ function tampilkanKeranjang() {
 
         keranjang.forEach(function(produk, index) {
 
-            let subtotal = produk.harga * produk.jumlah;
-
             isiKeranjang.innerHTML += `
                 <div class="cart-item">
 
                     <div class="cart-item-info">
                         <h3>${produk.nama}</h3>
+
                         <p>
                             Rp${produk.harga.toLocaleString("id-ID")}
                             x ${produk.jumlah}
@@ -118,6 +137,7 @@ function kurangiProduk(index) {
     keranjang[index].jumlah--;
 
     if (keranjang[index].jumlah <= 0) {
+
         keranjang.splice(index, 1);
     }
 
@@ -146,6 +166,7 @@ function hitungTotal() {
     let total = 0;
 
     keranjang.forEach(function(produk) {
+
         total += produk.harga * produk.jumlah;
     });
 
@@ -161,7 +182,42 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
 
     event.preventDefault();
 
-    if (keranjang.length === 0) {
+
+    // =========================
+    // AMBIL DATA FORM
+    // =========================
+
+    let nama = document.getElementById("nama").value.trim();
+    let telepon = document.getElementById("telepon").value.trim();
+    let alamat = document.getElementById("alamat").value.trim();
+    let catatan = document.getElementById("catatan").value.trim();
+
+
+    // =========================
+    // VALIDASI NOMOR WHATSAPP
+    // =========================
+
+    if (!/^08[0-9]{8,11}$/.test(telepon)) {
+
+        alert("Nomor WhatsApp harus berupa angka dan diawali 08. Contoh: 081234567890.");
+
+        return;
+    }
+
+
+    // =========================
+    // VALIDASI JENIS PESANAN
+    // =========================
+
+    if (jenisPesanan === "") {
+
+        alert("Silakan pilih produk atau jasa terlebih dahulu.");
+
+        return;
+    }
+
+
+    if (jenisPesanan === "produk" && keranjang.length === 0) {
 
         alert("Keranjang masih kosong. Silakan pilih produk terlebih dahulu.");
 
@@ -169,57 +225,82 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    let nama = document.getElementById("nama").value;
-    let telepon = document.getElementById("telepon").value;
-    let alamat = document.getElementById("alamat").value;
-    let catatan = document.getElementById("catatan").value;
+    // =========================
+    // BUAT PESAN WHATSAPP
+    // =========================
+
+    let pesan =
+        "Halo Wrap Me Up, saya ingin melakukan pemesanan.\n\n";
 
 
-    let pesan = "Halo Wrap Me Up, saya ingin melakukan pemesanan.%0A%0A";
-
-    pesan += "*Data Pemesan*%0A";
-    pesan += "Nama: " + nama + "%0A";
-    pesan += "WhatsApp: " + telepon + "%0A";
-    pesan += "Alamat: " + alamat + "%0A";
+    pesan += "*Data Pemesan*\n";
+    pesan += "Nama: " + nama + "\n";
+    pesan += "WhatsApp: " + telepon + "\n";
+    pesan += "Alamat: " + alamat + "\n";
 
 
     if (catatan !== "") {
-        pesan += "Catatan: " + catatan + "%0A";
+
+        pesan += "Catatan: " + catatan + "\n";
     }
 
 
-    pesan += "%0A*Pesanan*%0A";
+    // =========================
+    // PESANAN PRODUK
+    // =========================
 
+    if (jenisPesanan === "produk") {
 
-    keranjang.forEach(function(produk) {
+        pesan += "\n*Pesanan Barang*\n";
 
-        let subtotal = produk.harga * produk.jumlah;
+        keranjang.forEach(function(produk) {
+
+            let subtotal = produk.harga * produk.jumlah;
+
+            pesan +=
+                "- " +
+                produk.nama +
+                " x" +
+                produk.jumlah +
+                " = Rp" +
+                subtotal.toLocaleString("id-ID") +
+                "\n";
+        });
 
         pesan +=
-            "- " +
-            produk.nama +
-            " x" +
-            produk.jumlah +
-            " = Rp" +
-            subtotal.toLocaleString("id-ID") +
-            "%0A";
-    });
+            "\n*Total: Rp" +
+            hitungTotal().toLocaleString("id-ID") +
+            "*";
+    }
 
 
-    pesan += "%0A*Total: Rp" +
-        hitungTotal().toLocaleString("id-ID") +
-        "*";
+    // =========================
+    // PESANAN JASA
+    // =========================
+
+    else if (jenisPesanan === "jasa") {
+
+        pesan += "\n*Pesanan Jasa Packing*\n";
+        pesan += "Saya ingin memesan jasa packing.";
+    }
 
 
-    // Nomor WhatsApp Wrap Me Up
-    let nomorWrapMeUp = "6281991911191";
+    // =========================
+    // NOMOR WHATSAPP WRAP ME UP
+    // =========================
 
+    let nomorWrapMeUp = "6285654416771";
+
+
+    // =========================
+    // BUAT LINK WHATSAPP
+    // =========================
 
     let linkWhatsApp =
         "https://wa.me/" +
         nomorWrapMeUp +
         "?text=" +
-        pesan;
+        encodeURIComponent(pesan);
 
 
     window.open(linkWhatsApp, "_blank");
