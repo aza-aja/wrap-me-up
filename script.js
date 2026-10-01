@@ -3,6 +3,38 @@ let jenisPesanan = "";
 
 
 // =========================
+// SCROLL KE SECTION (MENU & LINK #)
+// =========================
+
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+
+    link.addEventListener("click", function(event) {
+
+        let id = link.getAttribute("href");
+        let target = document.querySelector(id);
+
+        if (!target) return;
+
+        event.preventDefault();
+
+        let tinggiNavbar = document.querySelector("header").offsetHeight;
+
+        let posisi =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            tinggiNavbar;
+
+        window.scrollTo({
+            top: posisi,
+            behavior: "smooth"
+        });
+
+        history.replaceState(null, "", id);
+    });
+});
+
+
+// =========================
 // TAMBAH PRODUK
 // =========================
 
@@ -38,10 +70,6 @@ function tambahProduk(nama, harga) {
 function pesanJasa() {
 
     jenisPesanan = "jasa";
-
-    document.getElementById("formPesanan").scrollIntoView({
-        behavior: "smooth"
-    });
 }
 
 
@@ -183,9 +211,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     event.preventDefault();
 
 
-    // =========================
     // AMBIL DATA FORM
-    // =========================
 
     let nama = document.getElementById("nama").value.trim();
     let telepon = document.getElementById("telepon").value.trim();
@@ -193,9 +219,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     let catatan = document.getElementById("catatan").value.trim();
 
 
-    // =========================
     // VALIDASI NOMOR WHATSAPP
-    // =========================
 
     if (!/^08[0-9]{8,11}$/.test(telepon)) {
 
@@ -205,9 +229,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    // =========================
     // VALIDASI JENIS PESANAN
-    // =========================
 
     if (jenisPesanan === "") {
 
@@ -225,9 +247,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    // =========================
     // BUAT PESAN WHATSAPP
-    // =========================
 
     let pesan =
         "Halo Wrap Me Up, saya ingin melakukan pemesanan.\n\n";
@@ -245,9 +265,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    // =========================
     // PESANAN PRODUK
-    // =========================
 
     if (jenisPesanan === "produk") {
 
@@ -274,9 +292,7 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    // =========================
     // PESANAN JASA
-    // =========================
 
     else if (jenisPesanan === "jasa") {
 
@@ -285,16 +301,12 @@ document.getElementById("formPesanan").addEventListener("submit", function(event
     }
 
 
-    // =========================
     // NOMOR WHATSAPP WRAP ME UP
-    // =========================
 
     let nomorWrapMeUp = "6285654416771";
 
 
-    // =========================
     // BUAT LINK WHATSAPP
-    // =========================
 
     let linkWhatsApp =
         "https://wa.me/" +
